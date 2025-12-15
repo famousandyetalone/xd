@@ -1,32 +1,51 @@
+<!DOCTYPE html>
+<html lang="de">
 <head>
     <meta charset="UTF-8">
-    <title>Herr Kabrhel bester Mann!!</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ERCAN ALATAS</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f0f8ff;
-            padding: 40px;
-            text-align: center;
+        /* Grundlegendes Styling */
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            width: 100%;
+            background: #111; /* dunkler Hintergrund */
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end; /* Bild am unteren Rand */
+            align-items: center;
+            overflow: hidden;
+            font-family: 'Arial', sans-serif;
         }
+
+        /* Text oben */
         h1 {
-            font-size: 36px;
-            color: #333;
+            position: absolute;
+            top: 20px;
+            font-size: 4em;
+            color: #fff;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            text-shadow: 0 0 20px #ff00ff, 0 0 40px #ff00ff, 0 0 60px #ff00ff;
+            animation: glow 2s infinite alternate;
         }
-        p {
-            font-size: 24px;
-            color: #444;
+
+        @keyframes glow {
+            0% { text-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff, 0 0 30px #ff00ff; }
+            100% { text-shadow: 0 0 20px #ff00ff, 0 0 40px #ff00ff, 0 0 60px #ff00ff; }
         }
-        .highlight {
-            font-weight: bold;
-            color: #0077cc;
+
+        /* Bild unten */
+        img {
+            width: 100%;
+            max-height: 70%;
+            object-fit: cover;
         }
     </style>
 </head>
 <body>
-
-<h1 class="highlight"><b>Das ist meine 6-7. Website!!!!</b></h1>
-<p>Ach, wie schön!</p>
-<p>Hallo, ich bin <span class="highlight">Elyesa</span>, ich bin 15 Jahre alt und ich liebe Informatik!</p>
-
+    <h1>ERCAN ALATAS</h1>
+    <img src="kaan.png" alt="Kaan Bild">
 </body>
-</html>
