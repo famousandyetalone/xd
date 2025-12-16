@@ -1,1 +1,43 @@
-<!DOCTYPE html> <html lang="de"> <head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <title>ERCAN ALATAS</title> <style> /* Grundlegendes Styling */ body, html { margin: 0; padding: 0; height: 100%; width: 100%; font-family: 'Arial', sans-serif; /* Hintergrundbild */ background: url('kaan.png') no-repeat center center; background-size: contain; /* Bild komplett sichtbar */ background-color: #111; /* fallback, falls Bild nicht lädt */ display: flex; justify-content: flex-start; align-items: flex-start; position: relative; } /* Text oben */ h1 { position: absolute; top: 20px; left: 50%; transform: translateX(-50%); font-size: 4em; color: #fff; text-transform: uppercase; letter-spacing: 5px; text-shadow: 0 0 20px #ff00ff, 0 0 40px #ff00ff, 0 0 60px #ff00ff; animation: glow 2s infinite alternate; } @keyframes glow { 0% { text-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff, 0 0 30px #ff00ff; } 100% { text-shadow: 0 0 20px #ff00ff, 0 0 40px #ff00ff, 0 0 60px #ff00ff; } } </style> </head> <body> <h1>ERCAN ALATAS</h1> </body> </html>
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>Split Background</title>
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .container {
+            display: flex;
+            width: 100%;
+            height: 100vh;
+        }
+
+        .left, .right {
+            width: 50%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        .left {
+            background-image: url("hassan.png");
+        }
+
+        .right {
+            background-image: url("kaan.png");
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="left"></div>
+        <div class="right"></div>
+    </div>
+</body>
+</html>
