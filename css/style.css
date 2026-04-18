@@ -1,0 +1,476 @@
+@font-face {
+  font-family: 'La Machine Company';
+  src: url('../fonts/La Machine Company.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'F5.6';
+  src: url(https://humantooth.neocities.org/fonts/F5.6-Regular.woff) format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Barecast';
+  src: url(https://humantooth.neocities.org/fonts/Barecast-Regular.woff2) format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Kino40';
+  src: url(https://vulpecula.neocities.org/css/kino40.woff) format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Splendid66';
+  src: url(https://vulpecula.neocities.org/css/splendid66.woff) format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* ── base ── */
+body {
+  margin: 0;
+  font-family: Barecast, monospace;
+  line-height: 1;
+  font-size: 12px;
+  background: #fcfae2;
+  color: #3d2b1f;
+}
+
+::selection {
+  background: #fffff0;
+  color: #7d9267;
+}
+
+/* ── links ── */
+a {
+  color: #616d54;
+  text-decoration: none;
+}
+a:hover {
+  color: #7d9267;
+  text-decoration: underline #3c4d3f;
+}
+
+/* ── headings ── */
+h1 {
+  margin: 0;
+  padding: 0;
+  font-family: Barecast, monospace;
+  font-size: 15px;
+  color: #7d9267;
+}
+
+h2 {
+  padding: 0;
+  font-family: Barecast, monospace;
+  font-size: 15px;
+  color: #7d9267;
+  position: relative;
+  z-index: 1;
+  margin-top: -1em;
+  background: #fcfae2;
+  filter: drop-shadow(1px 1px 0 #ede6ce) drop-shadow(-1px -1px 0 #ede6ce);
+}
+
+h3 {
+  margin: 0;
+  padding: 0;
+  font-family: Barecast, monospace;
+  font-size: 14px;
+  color: #7d9267;
+  position: relative;
+  z-index: 1;
+  margin-top: -0.9em;
+  margin-left: 0.1em;
+  background: #fcfae2;
+  filter: drop-shadow(1px 1px 0 #ede6ce) drop-shadow(-1px -1px 0 #ede6ce);
+}
+
+h4 {
+  margin: 0.2em;
+  padding: 0.3em;
+  font-family: 'Splendid66';
+  font-size: 20px;
+  color: #fcfae2;
+  position: relative;
+  z-index: 1;
+  background: #7d9267;
+}
+
+/* ── layout ── */
+.wrapper {
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 6%;
+  row-gap: 0;
+}
+
+.sidebar {
+  width: 150px;
+  float: right;
+  position: relative;
+}
+
+.main-wrapper {
+  margin-right: 170px;
+  position: relative;
+}
+
+.flex-container {
+  display: flex;
+  flex-wrap: nowrap;
+}
+.flex-container > div {
+  width: 100%;
+  margin: 0.2em;
+}
+
+/* ── navigation ── */
+.navi {
+  position: absolute;
+  transform: rotate(4deg);
+  top: -36px;
+  left: -90px;
+  z-index: 2;
+  filter: drop-shadow(0px 1px 0 #111) drop-shadow(0px 0px 0 #111);
+}
+
+/* ── pfp ── */
+.pfp-container {
+  position: relative;
+  width: 145px;
+  margin: -20px 0 0 -25px;
+  z-index: 3;
+  margin-bottom: 5px;
+}
+
+.pfp-container a {
+  display: block;
+  position: relative;
+}
+
+.pfp {
+  width: 145px;
+  height: 145px;
+  object-fit: cover;
+  border: none;
+  display: block;
+  transform: rotate(4deg);
+  filter: sepia(70%) hue-rotate(0deg) saturate(1.2) brightness(0.9);
+  transition: filter 0.3s ease;
+}
+
+.pfp-nametag {
+  font-family: Barecast, monospace;
+  font-size: 13px;
+  color: #7d9267;
+  text-align: center;
+  margin-top: 6px;
+  transform: rotate(4deg);
+  letter-spacing: 1px;
+}
+
+.pfp-hover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: Barecast, monospace;
+  font-size: 14px;
+  color: #fcfae2;
+  background: rgba(61, 43, 31, 0.55);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+  transform: rotate(4deg);
+}
+
+.pfp-container a:hover .pfp {
+  filter: brightness(0.85);
+}
+
+.pfp-container a:hover .pfp-hover {
+  opacity: 1;
+}
+
+/* ── boxes ── */
+.box {
+  border: 1px dotted #000;
+  padding: 0.5em 1em;
+  background-color: #fffff0;
+  margin-top: 10px;
+}
+
+.box-status {
+  border: 1px dotted #000;
+  padding: 0.5em 1em;
+  background-color: #fffff0;
+  max-height: 60px;
+  overflow-y: scroll;
+}
+
+.chatbox {
+  background: #fffff0;
+  font-size: smaller;
+  border: 1px dotted #555;
+  padding: 1.5em;
+}
+
+/* ── header ── */
+.header {
+  background: linear-gradient(#FFE1D5, #FFFCF0, #FFE7CE, #FFFCF0, #FAEEC6, #FFFCF0, #EDEECF, #FFFCF0, #DDF1E4, #FFFCF0, #E1ECEB, #FFFCF0, #F0EAEC, #FFFCF0, #FEE4E5, #FFFCF0);
+  background-size: 2600% 2600%;
+  animation: headerGradient 245s ease infinite;
+  border: 1px dotted #000;
+  height: 180px;
+  margin-bottom: -10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+}
+
+/* nipi-style kaomoji watermark */
+.header-kaomoji {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-family: Arial, sans-serif;
+  font-size: 22px;
+  opacity: 0.12;
+  color: #000;
+  text-shadow: 0 0 12px rgba(0,0,0,0.2);
+  line-height: 1.1;
+  white-space: pre;
+  pointer-events: none;
+  z-index: 1;
+}
+
+@keyframes headerGradient {
+  0% { background-position: 51% 0%; }
+  50% { background-position: 50% 100%; }
+  100% { background-position: 51% 0%; }
+}
+
+.headertxt {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: 1em;
+}
+
+/* ── sidebar decorations ── */
+.sidebar-img, .footer, .title, .links {
+  margin-top: 10px;
+}
+
+.music {
+  filter: sepia(80%) hue-rotate(40deg) saturate(1) brightness(0.9);
+}
+
+#outline {
+  filter: drop-shadow(1px 1px 0 black) drop-shadow(-1px -1px 0 black);
+  z-index: 1;
+}
+
+.cat {
+  position: relative;
+  bottom: 40px;
+  left: 10px;
+  margin-bottom: -35px;
+}
+.cat:hover {
+  animation: shake 0.5s infinite;
+}
+
+/* ── background pylon ── */
+#pylon {
+  background: url('../images/pylon3.png') center / cover;
+  margin-top: -790px;
+  margin-left: -320px;
+  z-index: -5;
+  position: absolute;
+  image-rendering: pixelated;
+  filter: sepia(70%) hue-rotate(0deg) saturate(2) brightness(0.95) opacity(0.15);
+  min-height: 100vh;
+}
+
+.pylonimg {
+  mask-image: linear-gradient(to bottom, rgba(0,0,0,1), rgba(0,0,0,0));
+  -webkit-mask-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0,0,0,1)), to(rgba(0,0,0,0)));
+}
+
+.crunch {
+  image-rendering: pixelated;
+}
+
+/* ── collapsible ── */
+.collapsible {
+  background-color: transparent;
+  margin-left: -5px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font-family: Barecast, monospace;
+  font-size: 14px;
+  margin-top: -5px;
+  margin-bottom: -5px;
+}
+.collapsible:hover {
+  color: #7d9267;
+  text-decoration: underline #3c4d3f;
+}
+.active, .collapsible:hover {
+  text-shadow: 0 0 0px #f1e4d1;
+}
+
+.content {
+  display: none;
+  overflow: hidden;
+  position: relative;
+  width: 362px;
+  top: 80px;
+  left: -380px;
+  height: 178px;
+  margin-bottom: -178px;
+  transform: rotate(-4deg);
+}
+
+/* ── misc ── */
+.inner {}
+
+.footer {
+  margin-bottom: 25px;
+}
+
+/* ── scrollbar ── */
+::-webkit-scrollbar-thumb {
+  background-color: #bebdb4;
+  border-radius: 10px;
+  border: 0px solid #faf9f1;
+}
+::-webkit-scrollbar {
+  width: 5px;
+  height: 0px;
+  margin-left: 3px;
+  background: #e6e5e3;
+}
+
+/* ── title text ── */
+.site-title {
+  font-family: 'La Machine Company', serif;
+  font-size: 52px;
+  color: #7d9267;
+  letter-spacing: 3px;
+  filter: drop-shadow(1px 1px 0 #ede6ce) drop-shadow(-1px -1px 0 #ede6ce);
+}
+
+.site-subtitle {
+  font-family: Barecast, monospace;
+  font-size: 14px;
+  color: #616d54;
+  letter-spacing: 1px;
+  margin-top: 4px;
+  padding-left: 20px;
+}
+
+/* ── status widget ── */
+#statuscafe {
+  font-size: 11px;
+  line-height: 1.4;
+}
+#statuscafe-username a {
+  color: #7d9267;
+}
+#statuscafe-content {
+  margin-top: 4px;
+  color: #3d2b1f;
+}
+
+/* ── now playing ── */
+.now-playing {
+  font-size: 11px;
+  line-height: 1.3;
+}
+
+/* ── changelog ── */
+.changelog-entry b {
+  color: #3d2b1f;
+}
+
+/* ── nipi decorations ── */
+.deco-gif {
+  border: 1px dotted #82817c;
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: #fffff0;
+}
+
+.deco-gif img {
+  display: block;
+  width: 100%;
+  height: auto;
+  image-rendering: auto;
+}
+
+.banner-gifs {
+  display: flex;
+  gap: 4px;
+  margin-top: 6px;
+  justify-content: center;
+}
+
+.banner-gifs img {
+  height: 20px;
+  image-rendering: pixelated;
+}
+
+.last-updated {
+  font-family: Arial, sans-serif;
+  font-size: 11px;
+  color: #82817c;
+  text-transform: lowercase;
+  margin-top: 8px;
+  text-align: center;
+}
+
+/* ── animations ── */
+@keyframes shake {
+  0% { transform: translate(1px, 1px) rotate(0deg); }
+  10% { transform: translate(-1px, -2px) rotate(-1deg); }
+  20% { transform: translate(-3px, 0px) rotate(1deg); }
+  30% { transform: translate(3px, 2px) rotate(0deg); }
+  40% { transform: translate(1px, -1px) rotate(1deg); }
+  50% { transform: translate(-1px, 2px) rotate(-1deg); }
+  60% { transform: translate(-3px, 1px) rotate(0deg); }
+  70% { transform: translate(3px, 1px) rotate(-1deg); }
+  80% { transform: translate(-1px, -1px) rotate(1deg); }
+  90% { transform: translate(1px, 2px) rotate(0deg); }
+  100% { transform: translate(1px, -2px) rotate(-1deg); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in {
+  animation: fadeIn 0.6s ease-out;
+}

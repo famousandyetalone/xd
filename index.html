@@ -1,129 +1,206 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Kaan Special Burger</title>
-
-    <!-- ICON -->
-    <link rel="icon" type="image/png" href="kaan.png">
-
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', sans-serif;
-        }
-
-        body {
-            min-height: 100vh;
-            background: linear-gradient(135deg, #0f0f0f, #1c1c1c);
-            color: white;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .card {
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(10px);
-            border-radius: 20px;
-            padding: 40px;
-            width: 380px;
-            text-align: center;
-            box-shadow: 0 20px 50px rgba(0,0,0,0.6);
-            transition: transform 0.4s ease, box-shadow 0.4s ease;
-        }
-
-        .card:hover {
-            transform: translateY(-10px) scale(1.03);
-            box-shadow: 0 30px 70px rgba(255, 165, 0, 0.4);
-        }
-
-        .burger-img {
-            width: 200px;
-            height: 200px;
-            margin: 0 auto 20px;
-            background-image: url("kaan.png");
-            background-size: contain;
-            background-repeat: no-repeat;
-            background-position: center;
-            filter: drop-shadow(0 10px 20px rgba(0,0,0,0.7));
-            animation: float 3s ease-in-out infinite;
-        }
-
-        @keyframes float {
-            0% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
-            100% { transform: translateY(0); }
-        }
-
-        h1 {
-            font-size: 28px;
-            margin-bottom: 10px;
-            color: #ffa500;
-        }
-
-        .subtitle {
-            font-size: 14px;
-            opacity: 0.8;
-            margin-bottom: 20px;
-        }
-
-        .price {
-            font-size: 32px;
-            font-weight: bold;
-            margin: 20px 0;
-            color: #00ffcc;
-        }
-
-        ul {
-            list-style: none;
-            margin-bottom: 25px;
-        }
-
-        ul li {
-            margin: 8px 0;
-            opacity: 0.9;
-        }
-
-        button {
-            padding: 15px 30px;
-            border: none;
-            border-radius: 30px;
-            font-size: 16px;
-            font-weight: bold;
-            cursor: pointer;
-            background: linear-gradient(135deg, #ffa500, #ff4500);
-            color: black;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        button:hover {
-            transform: scale(1.1);
-            box-shadow: 0 10px 25px rgba(255, 165, 0, 0.6);
-        }
-    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>adorable.wtf</title>
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+    <script src="https://kit.fontawesome.com/73d0a780d1.js" crossorigin="anonymous"></script>
 </head>
+
 <body>
 
-    <div class="card">
-        <div class="burger-img"></div>
+<div class="wrapper">
 
-        <h1>Kaan Special Burger</h1>
-        <div class="subtitle">Der legendäre Signature-Burger 🍔</div>
+    <!-- ═══ SIDEBAR ═══ -->
+    <div class="sidebar">
+        <br><br><br>
 
-        <ul>
-            <li>🔥 Saftiges Premium Beef</li>
-            <li>🧀 Extra geschmolzener Käse</li>
-            <li>🥬 Frischer Salat & Tomaten</li>
-            <li>🌶️ Geheimsoße à la Kaan</li>
-        </ul>
+        <div class="navi">
+            <img src="images/papersquare.png" style="width: 270px" alt="">
+        </div>
 
-        <div class="price">9,99 €</div>
+        <div class="pfp-container">
+            <a href="https://s.tardu.st">
+                <img src="images/pfp.jpg" class="pfp" alt="sev">
+                <span class="pfp-hover">click me</span>
+            </a>
+            <div class="pfp-nametag">krazy</div>
+        </div>
 
-        <button>Jetzt bestellen</button>
+        <center>
+            <img style="width:185px; margin-left:-10px; margin-bottom:-15px;" src="images/ivydiv.png" alt="">
+        </center>
+
+        <!-- status -->
+        <div class="box" style="width:140px">
+            <small>
+                <div id="statuscafe">
+                    <div id="statuscafe-username"></div>
+                    <div id="statuscafe-content">i love my life.</div>
+                </div>
+                <script>
+                    fetch("https://status.cafe/users/sever/status.json")
+                      .then(r => r.json())
+                      .then(r => {
+                        if (!r.content.length) {
+                          document.getElementById("statuscafe-content").innerHTML = "no status yet.";
+                          return;
+                        }
+                        document.getElementById("statuscafe-username").innerHTML =
+                          '<a href="https://status.cafe/users/sever" target="_blank">' + r.author + '</a> ' + r.face + ' ' + r.timeAgo;
+                        document.getElementById("statuscafe-content").innerHTML = r.content;
+                      })
+                      .catch(() => {
+                        document.getElementById("statuscafe-content").innerHTML = "sipping something warm.";
+                      });
+                </script>
+            </small>
+        </div>
+
+        <!-- nipi deco gif -->
+        <div class="deco-gif" style="width:140px;">
+            <img src="images/nipi-deco.gif" alt="">
+        </div>
+
+        <div class="banner-gifs">
+            <img src="images/miku.gif" alt="">
+            <img src="images/button-devils.gif" alt="">
+        </div>
+
+        <!-- site button -->
+        <center>
+        </center>
+
     </div>
 
+    <!-- ═══ MAIN CONTENT ═══ -->
+    <div class="main-wrapper">
+
+        <!-- header -->
+        <div class="title">
+            <div class="header">
+                <div class="header-kaomoji">    ∧＿∧
+　 (｡･ω･｡)つ━☆・*。
+  ⊂/      /    ・゜
+　しーＪ        °。+ * 。
+                         .・゜</div>
+                <div class="headertxt">
+                    <span class="site-title">adorable.wtf</span>
+                    <div class="site-subtitle">a quiet place on<br>the internet</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- welcome -->
+        <h3 style="top:30px; margin-left:-25px;">&#x22C6; i hate ascii art.</h3>
+        <div class="box">
+            <div class="inner">
+                <br>
+                <center>
+                    <p>hi hi, welcome in.</p>
+                    <p>this is my corner of the internet &mdash; a digital scrapbook for the things i collect, the stuff i care about, and whatever else ends up here.</p>
+                    <p>perpetually under construction. that's the charm of it.</p>
+                </center>
+            </div>
+        </div>
+
+        <br>
+
+        <div class="flex-container">
+            <div>
+                <!-- currently -->
+                <h3 style="top:15px; margin-left:-25px;">&#x22C6; what am i up to?</h3>
+                <div class="box" style="margin-top:-0.5em;">
+                    <div class="inner"><br>
+                        <div class="flex-container" style="margin-top:5px;">
+                            <div style="width:25px; color:#8a9a5b;">
+                                <i class="fa-solid fa-tv"></i>
+                            </div>
+                            <div>i really like cats</div>
+                        </div>
+
+                        <div class="flex-container">
+                            <div style="width:25px; color:#8a9a5b;">
+                                <i class="fa-solid fa-gamepad"></i>
+                            </div>
+                            <div>i eat alot of ramen</div>
+                        </div>
+
+                        <div class="flex-container">
+                            <div style="width:25px; color:#8a9a5b;">
+                                <i class="fa-solid fa-book-open"></i>
+                            </div>
+                            <div>i love my gf</div>
+                        </div>
+
+                        <div class="flex-container">
+                            <div style="width:25px; color:#8a9a5b;">
+                                <i class="fa-solid fa-headphones"></i>
+                            </div>
+                            <div>im the goat</div>
+                        </div>
+                    </div>
+
+                    <a href="#">
+                        <img id="outline" class="cat" src="images/ceramickitty.png" style="margin-left:160px; height:45px;" alt="">
+                    </a>
+                </div>
+            </div>
+
+            <div>
+                <!-- contact -->
+                <div style="margin-left:0.5em; width:110px; z-index:2;">
+                    <center>
+                        <b>&#x22C6; find me</b><br><br>
+                        <a href="#">
+                        </a>
+                        <br>
+                        <a href="https://github.com/famousandyetalone">
+                            <h1>github</h1>
+                        </a>
+                        <br>
+                        <h1 onclick="if(this.textContent==='discord'){this.textContent='copied!';navigator.clipboard.writeText('asdfg8250jdsrsk');setTimeout(()=>this.textContent='@asdfg8250jdsrsk',600)}else{this.textContent='discord'}" style="cursor:pointer;">discord</h1>
+                    </center>
+                </div>
+            </div>
+        </div>
+
+        <!-- latest post -->
+        <h3 style="top:15px; margin-left:-25px;">&#x22C6; latest post</h3>
+        <div class="box" style="margin-top:15px;">
+            <b>01.08.25:</b> today is the day where i got with my gf and i love her alot.
+        </div>
+
+        <p>
+            <center>
+                <small>
+                    est. february 2026 &#x22C6; <b>you are visitor #<span id="hitcount"><img src="https://sev.goatcounter.com/counter//.svg" alt="visitor count" style="height:12px; vertical-align:baseline;"></span></b>!
+                    <br>
+                    <span class="last-updated">last updated: <span id="lastUpdated">feb 21 2026</span></span>
+                </small>
+            </center>
+        </p>
+
+    </div>
+
+    <!-- background decoration -->
+    <img id="pylon" class="pylonimg" style="height:850px;" src="images/pylon3.png" alt="">
+
+</div>
+
+<audio id="bg-audio" src="audio/moon.mp3" loop></audio>
+
+<script data-goatcounter="https://sev.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+<script src="https://raw.githubusercontent.com/adryd325/oneko.js/14bab15a755d0e35cd4ae19c931d96d306f99f42/oneko.js"></script>
+<script>
+    document.addEventListener('click', function startAudio() {
+        const audio = document.getElementById('bg-audio');
+        audio.volume = 0.4;
+        audio.play();
+        document.removeEventListener('click', startAudio);
+    }, { once: true });
+</script>
 </body>
 </html>
